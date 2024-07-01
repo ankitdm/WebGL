@@ -16,14 +16,14 @@ public class WebViewManager : MonoBehaviour
     {
         UniWebView.SetJavaScriptEnabled(true);
         
-        UniWebViewLogger.Instance.LogLevel = UniWebViewLogger.Level.Verbose;
-        UniWebView.SetForwardWebConsoleToNativeOutput(true);
+        // UniWebViewLogger.Instance.LogLevel = UniWebViewLogger.Level.Verbose;
+        // UniWebView.SetForwardWebConsoleToNativeOutput(true);
          
         webView.Frame = new Rect(0, 0, Screen.width, Screen.height);
         webView.BackgroundColor = Color.black;
         
-        webView.OnMessageReceived += OnMessageReceived;
-        webView.OnLoadingErrorReceived += OnLoadingErrorReceived;
+        //webView.OnMessageReceived += OnMessageReceived;
+        //webView.OnLoadingErrorReceived += OnLoadingErrorReceived;
         
         webView.SetAllowFileAccess(true);   
     }

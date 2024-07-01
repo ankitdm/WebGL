@@ -19,7 +19,6 @@ public class MainMenuManager : MonoBehaviour
     public void StartGame(int _hostingStyle)
     {
         PlayerPrefs.SetInt("GameType", _hostingStyle);
-        
         SceneManager.LoadScene("SampleScene");
     }
 }

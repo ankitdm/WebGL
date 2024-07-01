@@ -42,7 +42,19 @@ public class TestWebView : MonoBehaviour
             }
             case Constants.HostingStyle.PersistentDataPath:
             {
-                StartLocalServer();
+                StartLocalServer("AlienShooter");
+
+                yield return new WaitForSeconds(1);
+                
+                string _localServerUrl = "http://localhost:8080/index.html";
+                
+                GetComponent<WebViewManager>().LoadGame(_localServerUrl);
+
+                break;
+            }
+            case Constants.HostingStyle.DownloadAndExtract:
+            { 
+                StartLocalServer("ExtractedFiles/AlienShooter");
 
                 yield return new WaitForSeconds(1);
                 
@@ -61,9 +73,9 @@ public class TestWebView : MonoBehaviour
         }
     }
 
-    private void StartLocalServer()
+    private void StartLocalServer(string _path)
     {
-        string webGLPath = Path.Combine(Application.persistentDataPath, "AlienShooter");
+        string webGLPath = Path.Combine(Application.persistentDataPath, _path);
 
         // Set up the HTTP server
         httpServer = new SimpleHttpServer(webGLPath, 8080);

@@ -7,6 +7,7 @@ public class Constants
     public enum HostingStyle
     {
         GitHosting,
-        PersistentDataPath
+        PersistentDataPath,
+        DownloadAndExtract
     }
 }

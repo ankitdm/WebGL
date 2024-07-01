@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class DownloadManager : MonoBehaviour
 {
-    private string webGLZipUrl; // = "https://your-webgl-game-url.com/WebGLGame.zip";
+    private string webGLZipUrl = "https://github.com/ankitdm/WebGL/blob/main/Games/AlienShooter.zip";
     private string localPath;
 
     private void Start()
@@ -17,7 +17,7 @@ public class DownloadManager : MonoBehaviour
 
     public void DownloadAndUnzipFile()
     {
-        webGLZipUrl = Path.Combine(Application.streamingAssetsPath , "AlienShooter.zip");
+       webGLZipUrl = Path.Combine(Application.streamingAssetsPath , "AlienShooter.zip");
         Debug.Log(webGLZipUrl);   
 
         localPath = Application.persistentDataPath; //Path.Combine(Application.persistentDataPath, "AlienShooter");
